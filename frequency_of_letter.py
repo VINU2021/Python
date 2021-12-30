@@ -1,10 +1,9 @@
-A= input("Please enter a string:")
-def most_frequent(string):
-    d = dict()
-    for key in string:
-        if key not in d:
-            d[key] = 1
-        else:
-            d[key] += 1
-    return d
-print (most_frequent(A))
+import operator
+string = input("enter a string :")
+d = dict()
+for letter in string:
+    if letter not in d:
+        d[letter] = string.count(letter)
+# Sort dictionary by values
+ordered_answer = sorted(d.items(), key=operator.itemgetter(1), reverse=True)
+print (ordered_answer)
